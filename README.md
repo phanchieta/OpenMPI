@@ -42,11 +42,18 @@ rpmdev-newspec openmpi.spec`
 Build the RPM with:
 `rpmbuild -ba ~/rpmbuild/SPECS/openmpi.spec`
 
+
 To add this repository to your operating system, you need to create a new file called `openmpi.repo` in the `/etc/yum.repos.d/` directory with the following contents:
+
+
 [openmpi]
+
 name=OpenMPI
+
 baseurl=https://raw.githubusercontent.com/phanchieta/OpenMPI/tree/main/RPM/rpmbuild/RPMS/
+
 enabled=1
+
 gpgcheck=0
 
 
