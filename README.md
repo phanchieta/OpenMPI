@@ -24,3 +24,29 @@ Inside the container environment, you can compile the sample program with:
 And then run with: 
 
 `mpirun -n 4 --allow-run-as-root ./mpi_hello_world`
+
+## RPM (WIP)
+Steps taken:
+
+Install necessary software:
+
+`sudo yum install rpm-build rpmdevtools`
+
+Build directory structure:
+`rpmdev-setuptree`
+
+Create a new Spec file:
+`cd ~/rpmbuild/SPECS
+rpmdev-newspec openmpi.spec`
+
+Build the RPM with:
+`rpmbuild -ba ~/rpmbuild/SPECS/openmpi.spec`
+
+To add this repository to your operating system, you need to create a new file called `openmpi.repo` in the `/etc/yum.repos.d/` directory with the following contents:
+[openmpi]
+name=OpenMPI
+baseurl=https://raw.githubusercontent.com/phanchieta/OpenMPI/tree/main/RPM/rpmbuild/RPMS/
+enabled=1
+gpgcheck=0
+
+
