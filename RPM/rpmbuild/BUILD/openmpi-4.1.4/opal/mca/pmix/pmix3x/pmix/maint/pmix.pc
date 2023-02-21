@@ -1,0 +1,12 @@
+prefix=/users/jarbas/rpmbuild/BUILD
+exec_prefix=/usr
+libdir=/usr/lib64
+includedir=/usr/include
+
+Name: pmix
+Description: Process Management Interface for Exascale (PMIx)
+Version: 3.2.3
+URL: https://pmix.org/
+Requires: 
+Libs: -L${libdir} -lpmix 
+Cflags: -I${includedir}
